@@ -1,0 +1,34 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int bucketSize = 800;
+
+void delay(int delay) 
+{ 
+ int now=time(NULL); 
+ int later=now+delay; 
+ while(now<=later)
+ 	now=time(NULL); 
+} 
+
+void bucketInput(int a,int b) {
+ if(a>bucketSize) {
+ 	cout<<"\n\t\tBucket overflow";
+ }
+ else {
+	 delay(1);
+	 while(a>b){
+		 cout<<"\n\t\t"<<b<<" bytes outputted.";
+		 a-=b;
+		 delay(1);
+ 	}
+ 	
+  if(a>0) {
+  	cout<<"\n\t\tLast "<<a<<" bytes sent\t";
+  }
+  
+  cout<<"\n\t\tBucket output successful";
+ }
+ 
+}
